@@ -2,207 +2,313 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <meta name="keywords" content="HE honghong, Honghong HE, hhh, hehonghong, honghonghe, he hong hong, 贺红红, 红红, vicky, Vickyhe">
-  <title>HE Honghong's Homepage</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic Homepage of HE Honghong (Vicky), Assistant Professor at City University of Macau.">
+  <title>HE Honghong | Homepage</title>
+  
+  <!-- Bootstrap 4 CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Favicon -->
   <link rel="shortcut icon" href="assets/H.svg">
+
+  <style>
+    /* Custom CSS Overrides */
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        background-color: #fcfcfc;
+        line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 {
+        font-family: 'Oswald', sans-serif;
+        color: #222;
+        letter-spacing: 0.5px;
+    }
+    .section_padding {
+        padding-top: 90px; /* Offset for sticky navbar */
+        padding-bottom: 40px;
+        border-bottom: 1px solid #eee;
+    }
+    .section_padding:last-child {
+        border-bottom: none;
+    }
+    
+    /* Profile Image */
+    .profile-img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        transition: transform 0.3s;
+    }
+    .profile-img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Icon Buttons */
+    .icon-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+        margin-top: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 50%;
+        background: white;
+        transition: all 0.2s;
+    }
+    .icon-btn:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Publications */
+    .pub-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        transition: box-shadow 0.3s;
+        margin-bottom: 30px;
+    }
+    .pub-card:hover {
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    .pub-img {
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .publication-links {
+        margin-top: 12px;
+    }
+    .publication-links a {
+        text-decoration: none;
+        margin-right: 8px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    /* Experiences */
+    .experience-item {
+        position: relative;
+        padding-left: 20px;
+        border-left: 3px solid #343a40;
+        margin-bottom: 40px;
+    }
+    .experience-year {
+        background: #343a40;
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+  </style>
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DB33G935YG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DB33G935YG');
   </script>
 </head>
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="center_bar">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#about" style="color: white">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#publications" style="color: white">Publications</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#experiences" style="color: white">Experiences</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-          Projects
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-<!--          <a class="dropdown-item" href="codegan-project">SP3F-GAN Project</a>-->
-          <a class="dropdown-item" href="tipgan_project">TiPGAN Project</a>
-        </div>
-      </li>
-    </ul>
-  </div>
+<body data-spy="scroll" data-target=".navbar" data-offset="100">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-block d-lg-none" href="#">HE Honghong</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#publications">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experiences">Experiences</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Projects
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="tipgan_project">TiPGAN Project</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<div class="container" style="margin-top: 0; margin-bottom: 3em">
+<div class="container">
+  
+  <!-- ABOUT SECTION -->
   <section id="about" class="section_padding">
-    <h2 style="font-family: 'Oswald', sans-serif; font-size: 32px;">Honghong HE</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4 mb-md-0">
-        <img src="assets/vickyhe.jpg" alt="honghong Photo"
-             class="img-thumbnail rounded-circle mx-auto d-block img-fluid"
-             style="border-radius: 50%;">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="assets/vickyhe.jpg" alt="Honghong HE Photo" class="profile-img">
       </div>
       <div class="col-md-8">
-        <p class="lead">I am HE Honghong, Vicky (賀紅紅), an Assistant Professor at the City University of Macau. I completed my PhD at the Hong Kong Polytechnic University (PolyU), 
-          supervised by Prof. Tracy Mok (Associate Professor, ISD, HKUST ) and Prof. Fan Jintu (SFT Chair Professor, PolyU). My primary research centers on generative models.
-          Additionally, I have explored areas including 3D model generation, augmented reality (AR), and virtual reality (VR). A selection of my 3D design work is presented below.
-
-          <button class="icon-button">
-            <a href="mailto:honghongvicky.he@connect.polyu.hk" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@5.8.0/icons/gmail.svg"
-                   alt="email icon"
-                   height="34"
-                   width="34">
-            </a>
-          </button>
-          <button class="icon-button">
-            <a href="https://scholar.google.com/citations?user=qQDXIWgAAAAJ" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v5.8.0/icons/googlescholar.svg"
-                   alt="Google Scholar icon"
-                   height="34"
-                   width="34">
-            </a>
-          </button>
-          <button class="icon-button">
-            <a href="https://github.com/VickyHEHonghong">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                   alt="GitHub" width="34" height="34">
-            </a>
-          </button>
+        <h2 class="mb-3" style="font-size: 2.5rem;">Honghong HE <small class="text-muted" style="font-size: 1.2rem; font-family: 'Roboto'">(Vicky / 賀紅紅)</small></h2>
+        <p class="lead text-justify">
+          I am an <b>Assistant Professor</b> at the City University of Macau. I completed my PhD at the Hong Kong Polytechnic University (PolyU), 
+          supervised by Prof. Tracy Mok (Associate Professor, ISD, HKUST) and Prof. Jintu Fan (SFT Chair Professor, PolyU). 
+        </p>
+        <p class="text-justify">
+          My primary research centers on <b>generative models</b> and their applications in <b>fashion</b>.
+          Additionally, I have explored areas including 3D model generation, augmented reality (AR), and virtual reality (VR).
+        </p>
+        
+        <div class="mt-4">
+          <a href="mailto:honghongvicky.he@connect.polyu.hk" class="icon-btn" title="Email Me">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@5.8.0/icons/gmail.svg" alt="Email" height="24" width="24">
+          </a>
+          <a href="https://scholar.google.com/citations?user=qQDXIWgAAAAJ" target="_blank" class="icon-btn" title="Google Scholar">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v5.8.0/icons/googlescholar.svg" alt="Google Scholar" height="24" width="24">
+          </a>
+          <a href="https://github.com/VickyHEHonghong" target="_blank" class="icon-btn" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" height="24" width="24">
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PUBLICATIONS SECTION -->
   <section id="publications" class="section_padding">
-    <h2>Publications</h2>
-    <table>
-      <tr>
-        <td>
-          <img src="https://github.com/user-attachments/assets/66a173c9-a8ad-4cf6-8762-b744e186eded" alt="SGDiff Results">
-        </td>
-        <td>
-          <b>He, H.</b>, Sun, Z., Fan, J., & Mok, P. Y. (2025). TiPGAN: High-quality tileable textures synthesis with intrinsic priors for cloth digitization applications. <b>Computer-Aided Design</b>.
-          <div class="publication-links">
-            <a href='tipgan_project'target="_blank">
-              <img src='https://img.shields.io/badge/Project-Page-Green'>
-            </a>
-            <a href='https://github.com/VickyHEHonghong/TiPGAN/'>
-              <img src='https://img.shields.io/badge/Code-Github-2284c1'>
-            </a>
-            <a href='https://www.sciencedirect.com/science/article/pii/S0010448525000284?via%3Dihub'>
-              <img src='https://img.shields.io/badge/Paper-Published-red'>
-            </a>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img src="https://taited.github.io/sgdiff-project/static/images/SGDiff.png" alt="SGDiff Results">
-        </td>
-        <td>
-          Sun, Z., Zhou, Y., <b>He, H.</b>, & Mok, P. Y. (2023). SGDiff: A Style-Guided Diffusion Model for Fashion Synthesis. <b>ACM Multimedia 2023</b>.
-          <div class="publication-links">
-            <a href='https://taited.github.io/sgdiff-project'target="_blank">
-              <img src='https://img.shields.io/badge/Project-Page-Green'>
-            </a>
-            <a href='https://github.com/taited/sgdiff'>
-              <img src='https://img.shields.io/badge/Code-Github-2284c1'>
-            </a>
-            <a href='https://arxiv.org/abs/2308.07605'>
-              <img src='https://img.shields.io/badge/Paper-Arxiv-red'>
-            </a>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img src="assets/seamless_patterns.jpg">
-        </td>
-        <td>
-          <b>He, H.</b>, Sun, Z., Jin-tu Fan, J., & Mok, P. Y. (2023). SP3F-GAN: SEAMLESS TEXTURE MAPS GENERATION BY ADVERSARIAL EXTENSION FOR FASHION. <b>MCCSIS 2023</b>.
-          <div class="publication-links">
-            <a href='https://github.com/VickyHEHonghong/SP3F-GAN'>
-              <img src='https://img.shields.io/badge/Code-Github-2284c1'>
-            </a> 
-            <a href='https://mccsis.org/wp-content/uploads/2023/07/CGVCVIP_F_062.pdf'>
-              <img src='https://img.shields.io/badge/Paper-Arxiv-red'>
-            </a>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img src="assets/fashion_landmarks.png">
-        </td>
-        <td>
-          <b>He, H.</b>, Zhou, Y., Jin-tu Fan, J., & Mok, P. Y. (2022). DETECTION OF FASHION LANDMARKS BASED ON POSE ESTIMATION AND HUMAN PARSING. <b>MCCSIS 2022</b>.
-          <div class="publication-links">
-            <a href='https://github.com/VickyHEHonghong/Fashion_landmarks_detection'>
-              <img src='https://img.shields.io/badge/Code-Github-2284c1'>
-            </a>
-            <a href='https://scholar.archive.org/work/lmls3qbf55byzpv3i6lzng3dcq/access/wayback/https://www.iadisportal.org/components/com_booklibrary/ebooks/202206L008.pdf'>
-              <img src='https://img.shields.io/badge/Paper-Arxiv-red'>
-            </a>
-          </div>
-        </td>
-      </tr>
-    </table>
+    <h2 class="mb-5">Publications</h2>
 
+    <!-- Paper 1 -->
+    <div class="row pub-card">
+      <div class="col-md-3">
+        <img src="https://github.com/user-attachments/assets/66a173c9-a8ad-4cf6-8762-b744e186eded" alt="TiPGAN Results" class="pub-img">
+      </div>
+      <div class="col-md-9">
+        <h5>TiPGAN: High-quality tileable textures synthesis with intrinsic priors for cloth digitization applications</h5>
+        <p class="mb-2"><b>He, H.</b>, Sun, Z., Fan, J., & Mok, P. Y. (2025). <i>Computer-Aided Design</i>.</p>
+        <div class="publication-links">
+          <a href='tipgan_project' target="_blank"><img src='https://img.shields.io/badge/Project-Page-Green' alt="Project Page"></a>
+          <a href='https://github.com/VickyHEHonghong/TiPGAN/' target="_blank"><img src='https://img.shields.io/badge/Code-Github-2284c1' alt="Code"></a>
+          <a href='https://www.sciencedirect.com/science/article/pii/S0010448525000284?via%3Dihub' target="_blank"><img src='https://img.shields.io/badge/Paper-Published-red' alt="Paper"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper 2 -->
+    <div class="row pub-card">
+      <div class="col-md-3">
+        <img src="https://taited.github.io/sgdiff-project/static/images/SGDiff.png" alt="SGDiff Results" class="pub-img">
+      </div>
+      <div class="col-md-9">
+        <h5>SGDiff: A Style-Guided Diffusion Model for Fashion Synthesis</h5>
+        <p class="mb-2">Sun, Z., Zhou, Y., <b>He, H.</b>, & Mok, P. Y. (2023). <i>ACM Multimedia 2023</i>.</p>
+        <div class="publication-links">
+          <a href='https://taited.github.io/sgdiff-project' target="_blank"><img src='https://img.shields.io/badge/Project-Page-Green' alt="Project Page"></a>
+          <a href='https://github.com/taited/sgdiff' target="_blank"><img src='https://img.shields.io/badge/Code-Github-2284c1' alt="Code"></a>
+          <a href='https://arxiv.org/abs/2308.07605' target="_blank"><img src='https://img.shields.io/badge/Paper-Arxiv-red' alt="Paper"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper 3 -->
+    <div class="row pub-card">
+      <div class="col-md-3">
+        <img src="assets/seamless_patterns.jpg" alt="SP3F-GAN" class="pub-img">
+      </div>
+      <div class="col-md-9">
+        <h5>SP3F-GAN: SEAMLESS TEXTURE MAPS GENERATION BY ADVERSARIAL EXTENSION FOR FASHION</h5>
+        <p class="mb-2"><b>He, H.</b>, Sun, Z., Jin-tu Fan, J., & Mok, P. Y. (2023). <i>MCCSIS 2023</i>.</p>
+        <div class="publication-links">
+          <a href='https://github.com/VickyHEHonghong/SP3F-GAN' target="_blank"><img src='https://img.shields.io/badge/Code-Github-2284c1' alt="Code"></a> 
+          <a href='https://mccsis.org/wp-content/uploads/2023/07/CGVCVIP_F_062.pdf' target="_blank"><img src='https://img.shields.io/badge/Paper-Arxiv-red' alt="Paper"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper 4 -->
+    <div class="row pub-card">
+      <div class="col-md-3">
+        <img src="assets/fashion_landmarks.png" alt="Fashion Landmarks" class="pub-img">
+      </div>
+      <div class="col-md-9">
+        <h5>DETECTION OF FASHION LANDMARKS BASED ON POSE ESTIMATION AND HUMAN PARSING</h5>
+        <p class="mb-2"><b>He, H.</b>, Zhou, Y., Jin-tu Fan, J., & Mok, P. Y. (2022). <i>MCCSIS 2022</i>.</p>
+        <div class="publication-links">
+          <a href='https://github.com/VickyHEHonghong/Fashion_landmarks_detection' target="_blank"><img src='https://img.shields.io/badge/Code-Github-2284c1' alt="Code"></a>
+          <a href='https://scholar.archive.org/work/lmls3qbf55byzpv3i6lzng3dcq/access/wayback/https://www.iadisportal.org/components/com_booklibrary/ebooks/202206L008.pdf' target="_blank"><img src='https://img.shields.io/badge/Paper-Arxiv-red' alt="Paper"></a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="experiences">
-    <h2>Experiences</h2>
-    <ul class="service-list">
-      <li>
-        One of the AR museum project designers and leaders （Three City Project） <b>2022</b>
-      </li>
-      <a href='https://hk.art.museum/sc/web/ma/home.html'>
-        <img src='https://img.shields.io/badge/Company-Page-aa84b7'>
+  <!-- EXPERIENCES SECTION -->
+  <section id="experiences" class="section_padding">
+    <h2 class="mb-5">Experiences</h2>
+    
+    <div class="experience-item">
+      <h4>AR Museum Project Leader <span class="experience-year">2022</span></h4>
+      <p>Three City Project. Designed and led the Augmented Reality implementation.</p>
+      <a href='https://hk.art.museum/sc/web/ma/home.html' target="_blank">
+        <img src='https://img.shields.io/badge/Company-Page-aa84b7' alt="Company Page">
       </a>
-      <li>
-        Research assistant at Laboratory for Artificial Intelligence in Design (AiDLab) <b>2020</b>
-      </li>
-      <a href='https://www.aidlab.hk/en/'>
-        <img src='https://img.shields.io/badge/Company-Page-aa84b7'>
+    </div>
+
+    <div class="experience-item">
+      <h4>Research Assistant <span class="experience-year">2020</span></h4>
+      <p>Laboratory for Artificial Intelligence in Design (AiDLab).</p>
+      <a href='https://www.aidlab.hk/en/' target="_blank">
+        <img src='https://img.shields.io/badge/Company-Page-aa84b7' alt="Company Page">
       </a>
-      <li>
-        4-year working experience at CLO Virtual Fashion (CLO3D) <b>2016</b>
-      </li>
-      <td>
-        <img src="design_works/video/3d design work.png" width="1000" alt="CLO 3D Design works">
-      </td>
-      <a href='https://www.clo3d.com/en/'>
-        <img src='https://img.shields.io/badge/Company-Page-aa84b7'>
+    </div>
+
+    <div class="experience-item">
+      <h4>3D Designer / Specialist <span class="experience-year">2016</span></h4>
+      <p>4-year working experience at CLO Virtual Fashion (CLO3D).</p>
+      <!-- Optimized Image: Added img-fluid to make it responsive on mobile -->
+      <div class="my-3">
+        <img src="design_works/video/3d design work.png" class="img-fluid rounded border shadow-sm" alt="CLO 3D Design works">
+      </div>
+      <a href='https://www.clo3d.com/en/' target="_blank">
+        <img src='https://img.shields.io/badge/Company-Page-aa84b7' alt="Company Page">
       </a>
-    </ul>
+    </div>
   </section>
+
+  <!-- Map Widget -->
+  <div class="text-center py-4">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5i0vu7luvaq&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+  </div>
+
 </div>
 
-<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5i0vu7luvaq&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
-
-<footer class="bg-dark text-white py-3" >
+<footer class="bg-dark text-white py-4">
   <div class="container text-center">
-    <p>&copy; <span id="currentYear"></span> HE Honghong</p>
+    <p class="mb-0">&copy; <span id="currentYear"></span> HE Honghong. All Rights Reserved.</p>
   </div>
 </footer>
 
