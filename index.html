@@ -14,112 +14,186 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- FontAwesome 6 (For high-quality icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/H.svg">
 
   <style>
-    /* Custom CSS Overrides */
-    body {
-        font-family: 'Roboto', sans-serif;
-        color: #333;
-        background-color: #fcfcfc;
-        line-height: 1.6;
-    }
-    h1, h2, h3, h4, h5 {
-        font-family: 'Oswald', sans-serif;
-        color: #222;
-        letter-spacing: 0.5px;
-    }
-    .section_padding {
-        padding-top: 90px; /* Offset for sticky navbar */
-        padding-bottom: 40px;
-        border-bottom: 1px solid #eee;
-    }
-    .section_padding:last-child {
-        border-bottom: none;
-    }
-    
-    /* Profile Image */
-    .profile-img {
-        width: 220px;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 5px solid #fff;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        transition: transform 0.3s;
-    }
-    .profile-img:hover {
-        transform: scale(1.05);
+    :root {
+      --primary-color: #2c3e50; /* Dark Slate */
+      --accent-color: #3498db;  /* Bright Blue */
+      --bg-light: #f8f9fa;
     }
 
-    /* Icon Buttons */
-    .icon-btn {
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: #444;
+        background-color: #ffffff;
+        line-height: 1.7;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4, h5 {
+        font-family: 'Oswald', sans-serif;
+        color: var(--primary-color);
+        letter-spacing: 0.5px;
+    }
+
+    /* Section Spacing */
+    .section_padding {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    
+    /* Navigation */
+    .navbar {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        background-color: var(--primary-color) !important;
+    }
+    .navbar-brand {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.5rem;
+    }
+
+    /* --- Profile Section --- */
+    .profile-card {
+        text-align: center;
+    }
+    .profile-img {
+        width: 240px;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+    .profile-img:hover {
+        transform: scale(1.03);
+    }
+    
+    /* Social Buttons */
+    .social-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 48px;
-        height: 48px;
-        margin-right: 10px;
-        margin-top: 10px;
-        border: 1px solid #e0e0e0;
+        width: 45px;
+        height: 45px;
+        margin: 0 5px;
+        background-color: #fff;
+        color: var(--primary-color);
+        border: 1px solid #ddd;
         border-radius: 50%;
-        background: white;
-        transition: all 0.2s;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+        text-decoration: none !important;
     }
-    .icon-btn:hover {
-        background-color: #f0f0f0;
+    .social-btn:hover {
+        background-color: var(--primary-color);
+        color: #fff;
         transform: translateY(-3px);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
-    /* Publications */
+    /* --- Publications --- */
     .pub-card {
         background: #fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
         padding: 20px;
-        border-radius: 8px;
-        transition: box-shadow 0.3s;
         margin-bottom: 30px;
+        transition: box-shadow 0.3s;
     }
     .pub-card:hover {
-        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border-color: transparent;
     }
     .pub-img {
         width: 100%;
-        border-radius: 6px;
-        border: 1px solid #eee;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .publication-links {
-        margin-top: 12px;
+    
+    /* Publication Action Buttons */
+    .btn-action {
+        font-size: 0.85rem;
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 5px 15px;
+        margin-right: 5px;
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
     }
-    .publication-links a {
-        text-decoration: none;
-        margin-right: 8px;
-        display: inline-block;
-        margin-bottom: 5px;
+    .btn-action i {
+        margin-right: 6px;
+    }
+    .btn-outline-primary {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+    }
+    .btn-outline-primary:hover {
+        background-color: var(--accent-color);
+        color: #fff;
     }
 
-    /* Experiences */
-    .experience-item {
+    /* --- Experience Timeline --- */
+    .timeline {
         position: relative;
-        padding-left: 20px;
-        border-left: 3px solid #343a40;
+        padding-left: 30px;
+        border-left: 2px solid #e9ecef;
+    }
+    .timeline-item {
+        position: relative;
         margin-bottom: 40px;
     }
+    /* The Icon Dot */
+    .timeline-icon {
+        position: absolute;
+        left: -46px; /* Adjust to center on line */
+        top: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid var(--accent-color);
+        color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        z-index: 1;
+    }
     .experience-year {
-        background: #343a40;
-        color: #fff;
-        padding: 2px 8px;
+        display: inline-block;
+        background: #f1f3f5;
+        color: #495057;
+        padding: 2px 10px;
         border-radius: 4px;
-        font-size: 0.9em;
-        vertical-align: middle;
-        margin-left: 10px;
+        font-weight: 500;
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+    .company-badge {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--accent-color);
+        font-weight: 500;
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+    .company-badge:hover {
+        text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--primary-color);
     }
   </style>
 
@@ -133,11 +207,12 @@
   </script>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="100">
+<body data-spy="scroll" data-target=".navbar" data-offset="120">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand d-block d-lg-none" href="#">HE Honghong</a>
+    <a class="navbar-brand d-lg-none" href="#">HE Honghong</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -170,97 +245,114 @@
   <!-- ABOUT SECTION -->
   <section id="about" class="section_padding">
     <div class="row align-items-center">
-      <div class="col-md-4 text-center mb-4 mb-md-0">
-        <img src="assets/vickyhe.jpg" alt="Honghong HE Photo" class="profile-img">
+      <!-- Left: Photo & Links -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="profile-card">
+          <img src="assets/vickyhe.jpg" alt="Honghong HE Photo" class="profile-img mb-4">
+          <div class="social-links">
+            <a href="mailto:honghongvicky.he@connect.polyu.hk" class="social-btn" title="Email Me">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=qQDXIWgAAAAJ" target="_blank" class="social-btn" title="Google Scholar">
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/VickyHEHonghong" target="_blank" class="social-btn" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
       </div>
+      
+      <!-- Right: Bio -->
       <div class="col-md-8">
-        <h2 class="mb-3" style="font-size: 2.5rem;">Honghong HE <small class="text-muted" style="font-size: 1.2rem; font-family: 'Roboto'">(Vicky / 賀紅紅)</small></h2>
-        <p class="lead text-justify">
-          I am an <b>Assistant Professor</b> at the City University of Macau. I completed my PhD at the Hong Kong Polytechnic University (PolyU), 
+        <h2 class="mb-3" style="font-size: 2.5rem;">Honghong HE <span class="text-muted" style="font-size: 1.25rem; font-weight: 300;">(Vicky / 賀紅紅)</span></h2>
+        
+        <p class="lead" style="font-weight: 400; color: #555;">
+          Assistant Professor at the City University of Macau.
+        </p>
+        
+        <p class="text-justify">
+          I completed my PhD at the <b>Hong Kong Polytechnic University (PolyU)</b>, 
           supervised by Prof. Tracy Mok (Associate Professor, ISD, HKUST) and Prof. Jintu Fan (SFT Chair Professor, PolyU). 
         </p>
         <p class="text-justify">
           My primary research centers on <b>generative models</b> and their applications in <b>fashion</b>.
           Additionally, I have explored areas including 3D model generation, augmented reality (AR), and virtual reality (VR).
         </p>
-        
-        <div class="mt-4">
-          <a href="mailto:honghongvicky.he@connect.polyu.hk" class="icon-btn" title="Email Me">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@5.8.0/icons/gmail.svg" alt="Email" height="24" width="24">
-          </a>
-          <a href="https://scholar.google.com/citations?user=qQDXIWgAAAAJ" target="_blank" class="icon-btn" title="Google Scholar">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v5.8.0/icons/googlescholar.svg" alt="Google Scholar" height="24" width="24">
-          </a>
-          <a href="https://github.com/VickyHEHonghong" target="_blank" class="icon-btn" title="GitHub">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" height="24" width="24">
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- PUBLICATIONS SECTION -->
   <section id="publications" class="section_padding">
-    <h2 class="mb-5">Publications</h2>
+    <h2 class="mb-5"><i class="fas fa-book-open mr-2 text-muted"></i> Publications</h2>
 
-    <!-- Paper 1 -->
-    <div class="row pub-card">
-      <div class="col-md-3">
-        <img src="https://github.com/user-attachments/assets/66a173c9-a8ad-4cf6-8762-b744e186eded" alt="TiPGAN Results" class="pub-img">
-      </div>
-      <div class="col-md-9">
-        <h5>TiPGAN: High-quality tileable textures synthesis with intrinsic priors for cloth digitization applications</h5>
-        <p class="mb-2"><b>He, H.</b>, Sun, Z., Fan, J., & Mok, P. Y. (2025). <i>Computer-Aided Design</i>.</p>
-        <div class="publication-links">
-          <a href='tipgan_project' target="_blank"><img src='https://img.shields.io/badge/Project-Page-Green' alt="Project Page"></a>
-          <a href='https://github.com/VickyHEHonghong/TiPGAN/' target="_blank"><img src='https://img.shields.io/badge/Code-Github-2284c1' alt="Code"></a>
-          <a href='https://www.sciencedirect.com/science/article/pii/S0010448525000284?via%3Dihub' target="_blank"><img src='https://img.shields.io/badge/Paper-Published-red' alt="Paper"></a>
+    <!-- Paper 1: TiPGAN -->
+    <div class="pub-card">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="https://github.com/user-attachments/assets/66a173c9-a8ad-4cf6-8762-b744e186eded" alt="TiPGAN Results" class="pub-img">
+        </div>
+        <div class="col-md-9">
+          <h5>TiPGAN: High-quality tileable textures synthesis with intrinsic priors for cloth digitization applications</h5>
+          <p class="mb-2 text-muted"><b>He, H.</b>, Sun, Z., Fan, J., & Mok, P. Y. (2025). <i>Computer-Aided Design</i>.</p>
+          <div class="mt-3">
+            <a href="tipgan_project" class="btn btn-outline-success btn-action"><i class="fas fa-globe"></i> Project Page</a>
+            <a href="https://github.com/VickyHEHonghong/TiPGAN/" class="btn btn-outline-dark btn-action"><i class="fab fa-github"></i> Code</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S0010448525000284?via%3Dihub" class="btn btn-outline-danger btn-action"><i class="far fa-file-pdf"></i> Paper</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Paper 2 -->
-    <div class="row pub-card">
-      <div class="col-md-3">
-        <img src="https://taited.github.io/sgdiff-project/static/images/SGDiff.png" alt="SGDiff Results" class="pub-img">
-      </div>
-      <div class="col-md-9">
-        <h5>SGDiff: A Style-Guided Diffusion Model for Fashion Synthesis</h5>
-        <p class="mb-2">Sun, Z., Zhou, Y., <b>He, H.</b>, & Mok, P. Y. (2023). <i>ACM Multimedia 2023</i>.</p>
-        <div class="publication-links">
-          <a href='https://taited.github.io/sgdiff-project' target="_blank"><img src='https://img.shields.io/badge/Project-Page-Green' alt="Project Page"></a>
-          <a href='https://github.com/taited/sgdiff' target="_blank"><img src='https://img.shields.io/badge/Code-Github-2284c1' alt="Code"></a>
-          <a href='https://arxiv.org/abs/2308.07605' target="_blank"><img src='https://img.shields.io/badge/Paper-Arxiv-red' alt="Paper"></a>
+    <!-- Paper 2: SGDiff -->
+    <div class="pub-card">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="https://taited.github.io/sgdiff-project/static/images/SGDiff.png" alt="SGDiff Results" class="pub-img">
+        </div>
+        <div class="col-md-9">
+          <h5>SGDiff: A Style-Guided Diffusion Model for Fashion Synthesis</h5>
+          <p class="mb-2 text-muted">Sun, Z., Zhou, Y., <b>He, H.</b>, & Mok, P. Y. (2023). <i>ACM Multimedia 2023</i>.</p>
+          <div class="mt-3">
+            <a href="https://taited.github.io/sgdiff-project" class="btn btn-outline-success btn-action"><i class="fas fa-globe"></i> Project Page</a>
+            <a href="https://github.com/taited/sgdiff" class="btn btn-outline-dark btn-action"><i class="fab fa-github"></i> Code</a>
+            <a href="https://arxiv.org/abs/2308.07605" class="btn btn-outline-danger btn-action"><i class="far fa-file-pdf"></i> Arxiv</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Paper 3 -->
-    <div class="row pub-card">
-      <div class="col-md-3">
-        <img src="assets/seamless_patterns.jpg" alt="SP3F-GAN" class="pub-img">
-      </div>
-      <div class="col-md-9">
-        <h5>SP3F-GAN: SEAMLESS TEXTURE MAPS GENERATION BY ADVERSARIAL EXTENSION FOR FASHION</h5>
-        <p class="mb-2"><b>He, H.</b>, Sun, Z., Jin-tu Fan, J., & Mok, P. Y. (2023). <i>MCCSIS 2023</i>.</p>
-        <div class="publication-links">
-          <a href='https://github.com/VickyHEHonghong/SP3F-GAN' target="_blank"><img src='https://img.shields.io/badge/Code-Github-2284c1' alt="Code"></a> 
-          <a href='https://mccsis.org/wp-content/uploads/2023/07/CGVCVIP_F_062.pdf' target="_blank"><img src='https://img.shields.io/badge/Paper-Arxiv-red' alt="Paper"></a>
+    <!-- Paper 3: SP3F-GAN -->
+    <div class="pub-card">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="assets/seamless_patterns.jpg" alt="SP3F-GAN" class="pub-img">
+        </div>
+        <div class="col-md-9">
+          <h5>SP3F-GAN: Seamless Texture Maps Generation by Adversarial Extension</h5>
+          <p class="mb-2 text-muted"><b>He, H.</b>, Sun, Z., Jin-tu Fan, J., & Mok, P. Y. (2023). <i>MCCSIS 2023</i>.</p>
+          <div class="mt-3">
+            <a href="https://github.com/VickyHEHonghong/SP3F-GAN" class="btn btn-outline-dark btn-action"><i class="fab fa-github"></i> Code</a>
+            <a href="https://mccsis.org/wp-content/uploads/2023/07/CGVCVIP_F_062.pdf" class="btn btn-outline-danger btn-action"><i class="far fa-file-pdf"></i> Paper</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Paper 4 -->
-    <div class="row pub-card">
-      <div class="col-md-3">
-        <img src="assets/fashion_landmarks.png" alt="Fashion Landmarks" class="pub-img">
-      </div>
-      <div class="col-md-9">
-        <h5>DETECTION OF FASHION LANDMARKS BASED ON POSE ESTIMATION AND HUMAN PARSING</h5>
-        <p class="mb-2"><b>He, H.</b>, Zhou, Y., Jin-tu Fan, J., & Mok, P. Y. (2022). <i>MCCSIS 2022</i>.</p>
-        <div class="publication-links">
-          <a href='https://github.com/VickyHEHonghong/Fashion_landmarks_detection' target="_blank"><img src='https://img.shields.io/badge/Code-Github-2284c1' alt="Code"></a>
-          <a href='https://scholar.archive.org/work/lmls3qbf55byzpv3i6lzng3dcq/access/wayback/https://www.iadisportal.org/components/com_booklibrary/ebooks/202206L008.pdf' target="_blank"><img src='https://img.shields.io/badge/Paper-Arxiv-red' alt="Paper"></a>
+    <!-- Paper 4: Landmarks -->
+    <div class="pub-card">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="assets/fashion_landmarks.png" alt="Fashion Landmarks" class="pub-img">
+        </div>
+        <div class="col-md-9">
+          <h5>Detection of Fashion Landmarks Based on Pose Estimation</h5>
+          <p class="mb-2 text-muted"><b>He, H.</b>, Zhou, Y., Jin-tu Fan, J., & Mok, P. Y. (2022). <i>MCCSIS 2022</i>.</p>
+          <div class="mt-3">
+            <a href="https://github.com/VickyHEHonghong/Fashion_landmarks_detection" class="btn btn-outline-dark btn-action"><i class="fab fa-github"></i> Code</a>
+            <a href="https://scholar.archive.org/work/lmls3qbf55byzpv3i6lzng3dcq/access/wayback/https://www.iadisportal.org/components/com_booklibrary/ebooks/202206L008.pdf" class="btn btn-outline-danger btn-action"><i class="far fa-file-pdf"></i> Paper</a>
+          </div>
         </div>
       </div>
     </div>
@@ -268,46 +360,58 @@
 
   <!-- EXPERIENCES SECTION -->
   <section id="experiences" class="section_padding">
-    <h2 class="mb-5">Experiences</h2>
+    <h2 class="mb-5"><i class="fas fa-briefcase mr-2 text-muted"></i> Experiences</h2>
     
-    <div class="experience-item">
-      <h4>AR Museum Project Leader <span class="experience-year">2022</span></h4>
-      <p>Three City Project. Designed and led the Augmented Reality implementation.</p>
-      <a href='https://hk.art.museum/sc/web/ma/home.html' target="_blank">
-        <img src='https://img.shields.io/badge/Company-Page-aa84b7' alt="Company Page">
-      </a>
-    </div>
-
-    <div class="experience-item">
-      <h4>Research Assistant <span class="experience-year">2020</span></h4>
-      <p>Laboratory for Artificial Intelligence in Design (AiDLab).</p>
-      <a href='https://www.aidlab.hk/en/' target="_blank">
-        <img src='https://img.shields.io/badge/Company-Page-aa84b7' alt="Company Page">
-      </a>
-    </div>
-
-    <div class="experience-item">
-      <h4>3D Designer / Specialist <span class="experience-year">2016</span></h4>
-      <p>4-year working experience at CLO Virtual Fashion (CLO3D).</p>
-      <!-- Optimized Image: Added img-fluid to make it responsive on mobile -->
-      <div class="my-3">
-        <img src="design_works/video/3d design work.png" class="img-fluid rounded border shadow-sm" alt="CLO 3D Design works">
+    <div class="timeline">
+      
+      <!-- Experience 1 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-vr-cardboard"></i></div>
+        <h4>AR Museum Project Leader</h4>
+        <div class="experience-year">2022</div>
+        <p class="mt-2">Three City Project. Designed and led the Augmented Reality implementation.</p>
+        <a href="https://hk.art.museum/sc/web/ma/home.html" target="_blank" class="company-badge">
+          <i class="fas fa-building mr-1"></i> Visit Project Page
+        </a>
       </div>
-      <a href='https://www.clo3d.com/en/' target="_blank">
-        <img src='https://img.shields.io/badge/Company-Page-aa84b7' alt="Company Page">
-      </a>
+
+      <!-- Experience 2 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-microscope"></i></div>
+        <h4>Research Assistant</h4>
+        <div class="experience-year">2020</div>
+        <p class="mt-2">Laboratory for Artificial Intelligence in Design (AiDLab).</p>
+        <a href="https://www.aidlab.hk/en/" target="_blank" class="company-badge">
+          <i class="fas fa-building mr-1"></i> Visit AiDLab
+        </a>
+      </div>
+
+      <!-- Experience 3 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-tshirt"></i></div>
+        <h4>3D Designer / Specialist</h4>
+        <div class="experience-year">2016</div>
+        <p class="mt-2">4-year working experience at CLO Virtual Fashion (CLO3D).</p>
+        <div class="my-3">
+          <img src="assets/3d design work.png" class="img-fluid rounded shadow-sm border" alt="CLO 3D Design works">
+        </div>
+        <a href="https://www.clo3d.com/en/" target="_blank" class="company-badge">
+          <i class="fas fa-building mr-1"></i> Visit CLO3D
+        </a>
+      </div>
+
     </div>
   </section>
 
   <!-- Map Widget -->
-  <div class="text-center py-4">
+  <div class="text-center py-5">
     <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5i0vu7luvaq&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
   </div>
 
 </div>
 
-<footer class="bg-dark text-white py-4">
-  <div class="container text-center">
+<footer class="text-white py-4 text-center">
+  <div class="container">
     <p class="mb-0">&copy; <span id="currentYear"></span> HE Honghong. All Rights Reserved.</p>
   </div>
 </footer>
